@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeSync 🎵</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎧 VibeSync</h1>
+    <p>Choose your mood and get song suggestions!</p>
+
+    <div class="mood-buttons">
+      <button onclick="showSongs('happy')">😊 Happy</button>
+      <button onclick="showSongs('sad')">😢 Sad</button>
+      <button onclick="showSongs('calm')">🧘 Calm</button>
+      <button onclick="showSongs('energetic')">⚡ Energetic</button>
+    </div>
+
+    <div id="song-list" class="song-list"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
