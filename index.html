@@ -4,21 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VibeSync 🎵</title>
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🎧 VibeSync</h1>
-    <p>Choose your mood and get song suggestions!</p>
+  <!-- Animated Background Elements -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
 
-    <div class="mood-buttons">
-      <button onclick="showSongs('happy')">😊 Happy</button>
-      <button onclick="showSongs('sad')">😢 Sad</button>
-      <button onclick="showSongs('calm')">🧘 Calm</button>
-      <button onclick="showSongs('energetic')">⚡ Energetic</button>
+  <div class="container glass-panel">
+    <header>
+      <div class="logo-wrapper">
+        <i class="fa-solid fa-headphones-simple fa-bounce" style="--fa-animation-duration: 3s;"></i>
+      </div>
+      <h1>VibeSync</h1>
+      <p class="subtitle">Match your mood to the perfect beat</p>
+    </header>
+
+    <div class="mood-section">
+      <h3>How are you feeling right now?</h3>
+      <div class="mood-buttons">
+        <button class="mood-btn" onclick="showSongs('happy')" data-mood="happy">
+          <i class="fa-regular fa-face-smile-beam"></i>
+          <span>Happy</span>
+        </button>
+        <button class="mood-btn" onclick="showSongs('sad')" data-mood="sad">
+          <i class="fa-regular fa-face-frown"></i>
+          <span>Sad</span>
+        </button>
+        <button class="mood-btn" onclick="showSongs('calm')" data-mood="calm">
+          <i class="fa-solid fa-leaf"></i>
+          <span>Calm</span>
+        </button>
+        <button class="mood-btn" onclick="showSongs('energetic')" data-mood="energetic">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Energetic</span>
+        </button>
+      </div>
     </div>
 
-    <div id="song-list" class="song-list"></div>
+    <div class="playlist-section hidden" id="playlist-section">
+      <div class="playlist-header">
+        <h2 id="playlist-title">Vibes</h2>
+        <span class="badge" id="song-count">0 songs</span>
+      </div>
+      <div id="song-list" class="song-list">
+        <!-- Songs injected dynamically -->
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
